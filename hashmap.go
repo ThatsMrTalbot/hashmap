@@ -396,3 +396,10 @@ func (m *HashMap) Iter() <-chan KeyValue {
 
 	return ch
 }
+
+// First gets the first element in the backing list in order to itterate.
+// The order of the items is sorted by hash keys.
+// Items may be added during itteraton
+func (m *HashMap) First() *ListElement {
+	return m.list().First()
+}
